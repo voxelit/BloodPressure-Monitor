@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BP_API.props" />
+</Project>

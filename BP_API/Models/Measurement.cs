@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace BP_API.Models
 {
     public enum Condition 
@@ -8,6 +10,7 @@ namespace BP_API.Models
     }
     public class Measurement
     {
+        [Key]
         public DateOnly Date {get; set;}
 
         public int Systolic {get; set;}
