@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:5034/api/Measurements" //change when you run server
+const apiUrl = "http://localhost:XXXX/api/Measurements" //change when you run server
 
 async function fetchMeasurements() {
     const response = await fetch(apiUrl);
