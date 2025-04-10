@@ -7,6 +7,6 @@ namespace BP_API.Data
         public LogContext(DbContextOptions<LogContext> options)
             :base(options) { }
 
-        public DbSet<Measurement> measurements { get; set; }
+        public DbSet<Measurement> Measurements { get; set; }
     }
 }

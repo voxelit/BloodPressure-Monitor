@@ -2,7 +2,6 @@ using BP_API.Data;
 using BP_API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.Features;
 
 namespace BP_API.Controllers
 {
@@ -19,13 +18,13 @@ namespace BP_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Measurement>>> GetMeasurements()
         {
-            return await _context.measurements.ToListAsync();
+            return await _context.Measurements.ToListAsync();
         }
 
         [HttpGet("date")]
         public async Task<ActionResult<Measurement>> GetMeasurement(DateOnly date)
         {
-            var measurement = await _context.measurements.FindAsync(date);
+            var measurement = await _context.Measurements.FindAsync(date);
 
             if(measurement == null)
             {
@@ -37,7 +36,7 @@ namespace BP_API.Controllers
         [HttpPost]
         public async Task<ActionResult<Measurement>> AddMeasurement(Measurement measurement)
         {
-            _context.measurements.Add(measurement);
+            _context.Measurements.Add(measurement);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetMeasurement), new {date = measurement.Date}, measurement);
         }
@@ -58,17 +57,17 @@ namespace BP_API.Controllers
             }
         }
 
-        [HttpDelete("date")]
+        [HttpDelete("{date}")]
         public async Task<IActionResult> Delete(DateOnly date)
         {
-            var measurement = await _context.measurements.FindAsync(date);
+            var measurement = await _context.Measurements.FindAsync(date);
 
             if(measurement == null)
             {
                 return NotFound();
             }
 
-            _context.measurements.Remove(measurement);
+            _context.Measurements.Remove(measurement);
             await _context.SaveChangesAsync();
             return NoContent();
         }

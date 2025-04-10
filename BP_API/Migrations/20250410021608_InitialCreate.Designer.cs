@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BP_API.Migrations
 {
     [DbContext(typeof(LogContext))]
-    [Migration("20250410003439_InitialCreate")]
+    [Migration("20250410021608_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace BP_API.Migrations
 
                     b.HasKey("Date");
 
-                    b.ToTable("measurements");
+                    b.ToTable("Measurements");
                 });
 #pragma warning restore 612, 618
         }

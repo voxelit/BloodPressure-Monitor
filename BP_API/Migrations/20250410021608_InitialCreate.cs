@@ -12,7 +12,7 @@ namespace BP_API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "measurements",
+                name: "Measurements",
                 columns: table => new
                 {
                     Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
@@ -22,7 +22,7 @@ namespace BP_API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_measurements", x => x.Date);
+                    table.PrimaryKey("PK_Measurements", x => x.Date);
                 });
         }
 
@@ -30,7 +30,7 @@ namespace BP_API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "measurements");
+                name: "Measurements");
         }
     }
 }

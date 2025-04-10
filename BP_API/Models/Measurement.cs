@@ -4,9 +4,9 @@ namespace BP_API.Models
 {
     public enum Condition 
     {
-        Low,
-        Normal,
-        High
+        Low = 0,
+        Normal = 1,
+        High = 3
     }
     public class Measurement
     {

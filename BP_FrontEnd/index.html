@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intital-scale=1.0">
+        <title>Blood Pressure Monitor</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Blood Pressure Log</h1>
+        <div id="measurement form">
+            <input type="date" id="dayOfMeasurement">
+            <input type="number" id="sysValue" placeholder="Systolic">
+            <input type="number" id="diaValue" placeholder="Diastolic">
+            <button onclick="addMeasurement()">Log Measurement</button>
+        </div>
+
+        <h2>Log</h2>
+        <ul id="measurements-list">
+
+        </ul>
+
+        <script src="index.js"></script>
+    </body>
+</html>
